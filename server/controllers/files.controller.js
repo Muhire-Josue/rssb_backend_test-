@@ -2,7 +2,7 @@
 import formidable from 'formidable';
 import csvToJson from 'convert-excel-to-json';
 import responseHandler from '../constants/responseHandler.util';
-import schemaValidation from '../validations/user.validation';
+import { fileSchemaValidation } from '../validations/user.validation';
 import models from '../database/models/index';
 
 const { Users } = models;
@@ -37,7 +37,7 @@ export default class FileController {
         const users = data[Object.keys(data)[0]];
         users.shift();
         users.forEach((user) => {
-          const { error } = schemaValidation.validate(user, {
+          const { error } = fileSchemaValidation.validate(user, {
             abortEarly: false,
           });
 

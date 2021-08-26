@@ -1,6 +1,6 @@
 import Joi from '@hapi/joi';
 
-const schemaValidation = Joi.object({
+export const fileSchemaValidation = Joi.object({
   name: Joi.string().min(3).max(15).empty('')
     .default('Empty value'),
   guid: Joi.string().length(36).required(),
@@ -18,4 +18,9 @@ const schemaValidation = Joi.object({
   gender: Joi.string().valid('Male', 'Female'),
   email: Joi.string().email(),
 });
-export default schemaValidation;
+
+export const userSchemaValidation = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().min(3).max(15).empty('')
+    .required(),
+});
