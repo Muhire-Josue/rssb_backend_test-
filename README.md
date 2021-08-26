@@ -30,12 +30,6 @@ Install dependencies
 npm install
 ```
 
-Tests
-
-```bash
-npm install
-```
-
 Run server
 
 ```bash
