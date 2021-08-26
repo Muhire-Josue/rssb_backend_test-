@@ -7,11 +7,11 @@
  * @returns {object} response
  * @description Returns a successful response
  */
-// const successResponse = (res, code, message, token, data = null) => res.status(code).json({
-//   message,
-//   token,
-//   data
-// });
+const successResponse = (res, code, message, token, data = null) => res.status(code).json({
+  message,
+  token,
+  data
+});
 
 /**
  * @param {object} res response object
@@ -20,9 +20,9 @@
  * @returns {object} response json object
  * @description Returns an error response
  */
-// const errorResponse = (res, code, error) => res.status(code).json({
-//   error,
-// });
+const errorResponse = (res, code, error) => res.status(code).json({
+  error,
+});
 
 /**
  * @param {object} res
@@ -37,7 +37,7 @@ const updatedResponse = async (res, code, message) => res.status(code).json({
 });
 
 export default {
-  // successResponse,
-  // errorResponse,
+  successResponse,
+  errorResponse,
   updatedResponse,
 };
