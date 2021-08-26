@@ -23,10 +23,6 @@ Install dependencies
 ```bash
 npm install
 ```
-Tests
-```bash
-npm install
-```
 Run server
 ```bash
 npm run dev
